@@ -66,16 +66,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName={isAuthenticated ? (userLuokka === "ope" ? "Arviointikirja" : "Arvioinnit") : "Kirjautuminen"}
-      screenOptions={{
-        drawerStyle: {
-          backgroundColor: "#f6efe7",
-        },
-        drawerActiveTintColor: "#3C5556",
-        headerStyle: {
-          backgroundColor: "#3C5556", // Yläpalkin taustaväri
-        },
-        headerTintColor: "#ffffff"
-      }}>
+        screenOptions={{
+          drawerStyle: {
+            backgroundColor: "#f6efe7",
+          },
+          drawerActiveTintColor: "#3C5556",
+          headerStyle: {
+            backgroundColor: "#3C5556", // Yläpalkin taustaväri
+          },
+          headerTintColor: "#ffffff"
+        }}>
         {/* Näytetään kirjautumissivu, jos käyttäjä ei ole kirjautunut */}
         {!isAuthenticated && (
           <Drawer.Screen name="Kirjautuminen">
@@ -108,9 +108,9 @@ export default function App() {
           <Drawer.Screen name="Kirjaudu ulos">
             {({ navigation }) => (
               <View style={styles.logoutContainer}>
-                <Text style= {{paddingBottom: 10}}>Kiva, että kävit. Nähdään taas pian!</Text>
+                <Text style={{ paddingBottom: 10 }}>Kiva, että kävit. Nähdään taas pian!</Text>
                 <Button
-                style={styles.button}
+                  style={styles.button}
                   mode="contained"
                   onPress={() => {
                     handleLogout();
@@ -132,8 +132,8 @@ export default function App() {
 const styles = StyleSheet.create({
   logoutContainer: {
     padding: 20,
-      backgroundColor: "#f6efe7",
-      height: "100%"
+    backgroundColor: "#f6efe7",
+    height: "100%"
   },
   loadingContainer: {
     flex: 1,

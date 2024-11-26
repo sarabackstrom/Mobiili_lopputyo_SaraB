@@ -97,7 +97,7 @@ export default function App() {
 
       {selectedStudent && (
         <>
-          <Text style={[styles.title, {paddingBottom:10}]}>Arvostelut</Text>
+          <Text style={[styles.title, { paddingBottom: 10 }]}>Arvostelut</Text>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <MaterialCommunityIcons name="account" size={20} color="#C8D8D7" />
             <Text>Opettaja</Text>

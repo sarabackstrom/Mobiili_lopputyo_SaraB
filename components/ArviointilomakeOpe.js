@@ -224,6 +224,6 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
-   backgroundColor: "#3C5556"
+    backgroundColor: "#3C5556"
   },
 });

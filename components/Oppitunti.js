@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, TextInput, PaperProvider } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native";
 import { getDatabase, ref, set, onValue, push } from "firebase/database";
@@ -7,7 +7,6 @@ import { getAuth } from "firebase/auth";
 import { Picker } from "@react-native-picker/picker";
 import { Luokat } from "./Luokat";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { useTheme } from "react-native-paper";
 
 
 export default function Oppitunti() {
@@ -19,7 +18,6 @@ export default function Oppitunti() {
   const [pickerVisible, setPickerVisible] = useState(false);
   const [oppilaat, setOppilaat] = useState([]);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const {colors} = useTheme();
 
   useEffect(() => {
     const kayttajatRef = ref(database, "kayttajat");
@@ -54,6 +52,9 @@ export default function Oppitunti() {
       return;
     }
 
+    const [year, month, day] = paivamaara.split("-");
+    const muokattuPvm = `${day}.${month}.${year}`;
+
     const user = getAuth().currentUser;
     if (user) {
       try {
@@ -63,7 +64,7 @@ export default function Oppitunti() {
 
         await set(newOppituntiRef, {
           luokka: luokka,
-          paivamaara: paivamaara,
+          paivamaara: muokattuPvm,
           aihe: aihe,
           kommentti: kommentti,
           oppituntiUid: oppituntiUid,
@@ -178,6 +179,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: "90%",
     marginHorizontal: "5%",
-    backgroundColor: "#3C5556"  },
+    backgroundColor: "#3C5556"
+  },
 });
 

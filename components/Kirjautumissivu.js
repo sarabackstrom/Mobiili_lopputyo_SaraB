@@ -82,7 +82,7 @@ export default function Kirjautumisivu({ onLogin }) {
         value={email}
         onChangeText={setEmail}
         mode="outlined"
-        style={[styles.input, {marginTop:20}]}
+        style={[styles.input, { marginTop: 20 }]}
         activeOutlineColor="#3C5556"
       />
       <TextInput
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#f5eeff",
     width: "100%",
-      backgroundColor: "#f6efe7"
+    backgroundColor: "#f6efe7"
   },
   input: {
     marginBottom: 10,
@@ -179,8 +179,8 @@ const styles = StyleSheet.create({
   },
   button: {
     marginBottom: 10,
-      backgroundColor: "#3C5556",
-      width: "90%",
+    backgroundColor: "#3C5556",
+    width: "90%",
     marginStart: "5%"
   },
   button2: {
